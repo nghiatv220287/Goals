@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Robolectric</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="activity_main_tv_hello">Hello</string>
+    <string name="activity_main_btn_sign_in">Sign In</string>
+
+    <string name="activity_sign_in_edt_hint_username">Username</string>
+    <string name="activity_sign_in_edt_hint_password">Password</string>
+    <string name="activity_sign_in_btn_login">Login</string>
+    <string name="activity_sign_in_tv_success">Success</string>
+    <string name="activity_sign_in_tv_fail">Fail</string>
 </resources>
