@@ -1,24 +1,25 @@
-package com.nghiatv.baad;
+package com.nghiatv.baad.activity;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.nghiatv.baad.activity.LifeCycleActivity;
+import com.nghiatv.baad.R;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = MainActivity.class.getSimpleName();
+public class LifeCycleActivity extends AppCompatActivity {
+    private static final String TAG = LifeCycleActivity.class.getSimpleName();
 
-    private Button mBtnGoToLifeCycleActivity;
+    private Button mBtnShowDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_life_cycle);
+        Log.d(TAG, "----> onCreate:");
         init();
         listener();
     }
@@ -60,16 +61,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mBtnGoToLifeCycleActivity = (Button) findViewById(R.id.mBtnGoToLifeCycleActivity);
+        mBtnShowDialog = (Button) findViewById(R.id.mBtnShowDialog);
     }
 
     private void listener() {
-        mBtnGoToLifeCycleActivity.setOnClickListener(new View.OnClickListener() {
+        mBtnShowDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LifeCycleActivity.class);
-                startActivity(intent);
+                showMessageDialog(getString(R.string.life_cycle_dialog_title));
             }
         });
+    }
+
+    private void showMessageDialog(String title) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LifeCycleActivity.this);
+        builder.setMessage(title);
+        builder.setPositiveButton(R.string.life_cycle_dialog_ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

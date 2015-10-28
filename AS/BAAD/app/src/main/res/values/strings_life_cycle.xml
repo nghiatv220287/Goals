@@ -1,0 +1,7 @@
+<resources>
+    <string name="life_cycle_txt_life_cycle_activity">LifeCycleActivity</string>
+    <string name="life_cycle_btn_show_dialog">Show Dialog</string>
+    <string name="life_cycle_dialog_title">Dialog</string>
+    <string name="life_cycle_dialog_ok">OK</string>
+    <string name="life_cycle_dialog_cancel">Cancel</string>
+</resources>

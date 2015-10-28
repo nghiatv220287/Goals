@@ -7,20 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".activity.LifeCycleActivity">
 
     <TextView
-        android:id="@+id/mTvMainActivity"
+        android:id="@+id/mTvLifeCycleActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/main_txt_main_activity" />
+        android:text="@string/life_cycle_txt_life_cycle_activity" />
 
     <Button
-        android:id="@+id/mBtnGoToLifeCycleActivity"
+        android:id="@+id/mBtnShowDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mTvMainActivity"
+        android:layout_below="@id/mTvLifeCycleActivity"
         android:layout_centerHorizontal="true"
-        android:text="@string/main_btn_go_to_life_cycle_activity" />
+        android:text="@string/life_cycle_btn_show_dialog" />
 </RelativeLayout>
