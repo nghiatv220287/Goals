@@ -1,7 +1,10 @@
 package com.nghiatv.baad.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -13,7 +16,16 @@ import com.nghiatv.baad.R;
 public class LifeCycleActivity extends AppCompatActivity {
     private static final String TAG = LifeCycleActivity.class.getSimpleName();
 
+    private static final int REQUEST_CODE = 100;
+    private static final String URL_AMAZON = "http://www.amazon.com";
+    private static final String TEL_NUMBER = "tel:+651234567";
+    private static final String GEO_LAT_LONG = "geo:37.827500,-122.481670";
+
     private Button mBtnShowDialog;
+    private Button mBtnShowWebBrowser;
+    private Button mBtnMakeCalls;
+    private Button mBtnShowMap;
+    private Button mBtnChooseContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +74,10 @@ public class LifeCycleActivity extends AppCompatActivity {
 
     private void init() {
         mBtnShowDialog = (Button) findViewById(R.id.mBtnShowDialog);
+        mBtnShowWebBrowser = (Button) findViewById(R.id.mBtnShowWebBrowser);
+        mBtnMakeCalls = (Button) findViewById(R.id.mBtnMakeCalls);
+        mBtnShowMap = (Button) findViewById(R.id.mBtnShowMap);
+        mBtnChooseContact = (Button) findViewById(R.id.mBtnChooseContact);
     }
 
     private void listener() {
@@ -71,6 +87,46 @@ public class LifeCycleActivity extends AppCompatActivity {
                 showMessageDialog(getString(R.string.life_cycle_dialog_title));
             }
         });
+        mBtnShowWebBrowser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_AMAZON));
+                startActivity(i);
+            }
+        });
+        mBtnMakeCalls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse(TEL_NUMBER));
+                startActivity(i);
+            }
+        });
+        mBtnShowMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(GEO_LAT_LONG));
+                startActivity(i);
+            }
+        });
+        mBtnChooseContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_PICK);
+                i.setType(ContactsContract.Contacts.CONTENT_TYPE);
+                startActivityForResult(i, REQUEST_CODE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(data.getData().toString()));
+                startActivity(i);
+            }
+        }
     }
 
     private void showMessageDialog(String title) {

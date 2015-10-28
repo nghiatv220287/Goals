@@ -4,4 +4,8 @@
     <string name="life_cycle_dialog_title">Dialog</string>
     <string name="life_cycle_dialog_ok">OK</string>
     <string name="life_cycle_dialog_cancel">Cancel</string>
+    <string name="life_cycle_btn_show_web_browser">Show WebBrowser</string>
+    <string name="life_cycle_btn_make_calls">Make Calls</string>
+    <string name="life_cycle_btn_show_map">Show Map</string>
+    <string name="life_cycle_btn_choose_contact">Choose Contact</string>
 </resources>

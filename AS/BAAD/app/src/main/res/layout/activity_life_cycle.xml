@@ -18,9 +18,41 @@
 
     <Button
         android:id="@+id/mBtnShowDialog"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/mTvLifeCycleActivity"
         android:layout_centerHorizontal="true"
         android:text="@string/life_cycle_btn_show_dialog" />
+
+    <Button
+        android:id="@+id/mBtnShowWebBrowser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mBtnShowDialog"
+        android:layout_centerHorizontal="true"
+        android:text="@string/life_cycle_btn_show_web_browser" />
+
+    <Button
+        android:id="@+id/mBtnMakeCalls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mBtnShowWebBrowser"
+        android:layout_centerHorizontal="true"
+        android:text="@string/life_cycle_btn_make_calls" />
+
+    <Button
+        android:id="@+id/mBtnShowMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mBtnMakeCalls"
+        android:layout_centerHorizontal="true"
+        android:text="@string/life_cycle_btn_show_map" />
+
+    <Button
+        android:id="@+id/mBtnChooseContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mBtnShowMap"
+        android:layout_centerHorizontal="true"
+        android:text="@string/life_cycle_btn_choose_contact" />
 </RelativeLayout>
