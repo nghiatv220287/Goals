@@ -67,8 +67,18 @@ public class MainActivity extends AppCompatActivity {
         mBtnGoToLifeCycleActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//              Linking activities using intents
                 Intent intent = new Intent(MainActivity.this, LifeCycleActivity.class);
                 startActivity(intent);
+
+//               <activity android:name=”.Activity2”
+//                ​​​​​​​​​android:label=”Activity 2”>
+//                  <intent-filter>
+//                ​​    <action android:name=”net.learn2develop.ACTIVITY2” />
+//                ​​​​​​<category android:name=”android.intent.category.DEFAULT” />
+//                ​​</intent-filter>
+//               </activity>
             }
         });
     }
