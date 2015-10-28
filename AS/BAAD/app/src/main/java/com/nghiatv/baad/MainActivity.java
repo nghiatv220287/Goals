@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 //                ​​​​​​<category android:name=”android.intent.category.DEFAULT” />
 //                ​​</intent-filter>
 //               </activity>
+//                startActivity(new Intent(“net.learn2develop.ACTIVITY2”));
             }
         });
     }
